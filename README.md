@@ -19,8 +19,8 @@
 </p>
 
 <p align="center">
-  <a href="https://SEU-PROJETO.vercel.app"><strong>Acessar a solução</strong></a> ·
-  <a href="https://SEU-PROJETO.vercel.app/?demo">Modo demonstração</a> ·
+  <a href="https://giz-assistente-ia.vercel.app"><strong>Acessar a solução</strong></a> ·
+  <a href="https://giz-assistente-ia.vercel.app/?demo">Modo demonstração</a> ·
   <a href="docs/parte-teorica.md">Parte teórica</a> ·
   <a href="docs/roteiro-video.md">Roteiro do vídeo</a>
 </p>
