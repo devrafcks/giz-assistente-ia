@@ -64,16 +64,16 @@ Depois disso, uma pessoa lê, edita se quiser, pede ajustes em linguagem natural
 
 ```mermaid
 flowchart LR
-    A[Formulário estruturado] --> B[/api/gerar]
-    B --> C[Proteger<br/>regex no servidor]
-    C --> D[Entender<br/>zero-shot + persona<br/>+ meta prompting]
-    D --> E[Escrever<br/>few-shot + role]
-    E --> F[Revisar<br/>verificação de perguntas]
-    F --> G[Tela: texto editável,<br/>nota e alertas]
-    G --> H{Pessoa decide}
-    H -- aprovar --> I[Histórico de aprovados]
-    H -- pedir ajuste --> J[/api/ajustar<br/>follow-up/]
-    J --> C2[Proteger] --> E2[Escrever] --> F2[Revisar] --> G
+    A["Formulário estruturado"] --> B["POST /api/gerar"]
+    B --> C["Proteger<br/>regex no servidor"]
+    C --> D["Entender<br/>zero-shot + persona<br/>+ meta prompting"]
+    D --> E["Escrever<br/>few-shot + role"]
+    E --> F["Revisar<br/>verificação de perguntas"]
+    F --> G["Tela: texto editável,<br/>nota e alertas"]
+    G --> H{"Pessoa decide"}
+    H -- aprovar --> I["Histórico de aprovados"]
+    H -- pedir ajuste --> J["POST /api/ajustar<br/>follow-up"]
+    J --> C2["Proteger"] --> E2["Escrever"] --> F2["Revisar"] --> G
 ```
 
 As duas rotas respondem em streaming (NDJSON): cada etapa vira um evento assim que termina.
