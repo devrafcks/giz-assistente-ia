@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" fill="none">
+  <style>
+    .anilha { animation: carregar .7s cubic-bezier(.16,1,.3,1) both; }
+    .e1 { animation-delay: .15s; } .e2 { animation-delay: .3s; } .e3 { animation-delay: .45s; } .e4 { animation-delay: .6s; }
+    .lado-esq .anilha { --de: -60px; } .lado-dir .anilha { --de: 60px; }
+    @keyframes carregar { from { transform: translateX(var(--de)); opacity: 0; } to { transform: none; opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .anilha { animation: none; } }
+  </style>
+
+  <g fill="#121411" fill-opacity=".08">
+    <ellipse cx="320" cy="272" rx="290" ry="10"/>
+  </g>
+  <g fill="#121411" fill-opacity=".18">
+    <circle cx="96" cy="252" r="2"/><circle cx="118" cy="262" r="1.5"/><circle cx="530" cy="258" r="2"/>
+    <circle cx="552" cy="250" r="1.2"/><circle cx="300" cy="266" r="1.4"/><circle cx="372" cy="262" r="1.8"/>
+  </g>
+
+  <rect x="150" y="142" width="340" height="12" rx="3" fill="#121411"/>
+  <g stroke="#f4f5f2" stroke-opacity=".35" stroke-width="1.2">
+    <path d="M250 145v6M262 145v6M274 145v6M366 145v6M378 145v6M390 145v6"/>
+  </g>
+  <rect x="20" y="136" width="130" height="24" rx="4" fill="#121411"/>
+  <rect x="490" y="136" width="130" height="24" rx="4" fill="#121411"/>
+  <rect x="140" y="124" width="14" height="48" rx="3" fill="#121411"/>
+  <rect x="486" y="124" width="14" height="48" rx="3" fill="#121411"/>
+
+  <g class="lado-esq" stroke="#121411" stroke-width="3">
+    <rect class="anilha e1" x="102" y="38" width="36" height="220" rx="7" fill="#d7262e"/>
+    <rect class="anilha e2" x="68" y="38" width="32" height="220" rx="7" fill="#1f5bd8"/>
+    <rect class="anilha e3" x="40" y="38" width="26" height="220" rx="7" fill="#f2b705"/>
+    <rect class="anilha e4" x="18" y="38" width="20" height="220" rx="6" fill="#1e9e57"/>
+  </g>
+  <g class="lado-dir" stroke="#121411" stroke-width="3">
+    <rect class="anilha e1" x="502" y="38" width="36" height="220" rx="7" fill="#d7262e"/>
+    <rect class="anilha e2" x="540" y="38" width="32" height="220" rx="7" fill="#1f5bd8"/>
+    <rect class="anilha e3" x="574" y="38" width="26" height="220" rx="7" fill="#f2b705"/>
+    <rect class="anilha e4" x="602" y="38" width="20" height="220" rx="6" fill="#1e9e57"/>
+  </g>
+
+  <path d="M190 112 h52 l10 -22 14 52 16 -76 14 64 10 -18 h144" stroke="#121411" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
