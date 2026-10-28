@@ -21,8 +21,7 @@
 <p align="center">
   <a href="https://giz-assistente-ia.vercel.app"><strong>Acessar a solução</strong></a> ·
   <a href="https://giz-assistente-ia.vercel.app/?demo">Modo demonstração</a> ·
-  <a href="docs/parte-teorica.md">Parte teórica</a> ·
-  <a href="docs/roteiro-video.md">Roteiro do vídeo</a>
+  <a href="docs/parte-teorica.md">Parte teórica</a>
 </p>
 
 ---
@@ -185,7 +184,6 @@ scripts/
   servidor-local.js       servidor de desenvolvimento (a Vercel não usa)
 docs/
   parte-teorica.md
-  roteiro-video.md
   evidencias/
 ```
 
@@ -198,12 +196,11 @@ docs/
 | Prompts claramente definidos | Pasta [`api/_lib/prompts/`](api/_lib/prompts), um arquivo por etapa |
 | Fluxo automatizado ou agente | Quatro etapas encadeadas, em que cada saída alimenta a próxima, mais o ciclo de ajuste |
 | Saída coerente com contexto, público e objetivo | Regras por canal, guia de marca, exemplo do canal e checklist de revisão |
-| Evidências | [`docs/evidencias/`](docs/evidencias) e a demonstração no vídeo |
+| Evidências | [`docs/evidencias/`](docs/evidencias) |
 | Fluxo construído | Diagrama acima e etapas visíveis na própria tela |
-| Link da solução | Deploy na Vercel (link no topo deste README) |
+| Link da solução | [giz-assistente-ia.vercel.app](https://giz-assistente-ia.vercel.app) |
 | README | Este documento |
 | Parte teórica | [`docs/parte-teorica.md`](docs/parte-teorica.md) |
-| Vídeo pitch | Roteiro em [`docs/roteiro-video.md`](docs/roteiro-video.md) |
 
 ## Limitações conhecidas
 
