@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giz · Assistente de comunicação</title>
+  <meta name="description" content="Assistente de IA que escreve as comunicações da academia Giz.">
+  <meta name="theme-color" content="#eef0ec">
+  <link rel="icon" href="assets/marca/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="pular" href="#t-briefing">Pular para o briefing</a>
+
+  <header class="barra">
+    <a class="marca" href="./" aria-label="Giz, página inicial">
+      <img class="logo" src="assets/marca/logo.svg" alt="" width="40" height="40">
+      <span class="marca-nome" aria-hidden="true">Giz</span>
+    </a>
+    <p class="barra-produto">Assistente de comunicação</p>
+    <p id="selo-modo" class="selo-modo" hidden>Modo demonstração</p>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="t-hero">
+      <div class="hero-texto">
+        <h1 id="t-hero">Seus textos em forma.</h1>
+        <p class="hero-sub">Escreva o essencial. O agente prepara o texto, e quem publica é você.</p>
+        <ul class="legenda-anilhas" aria-label="Etapas do agente">
+          <li class="c-lgpd">Proteger</li>
+          <li class="c-entender">Entender</li>
+          <li class="c-escrever">Escrever</li>
+          <li class="c-revisar">Revisar</li>
+        </ul>
+      </div>
+      <img class="hero-arte" src="assets/ilustracoes/hero-barra.svg" alt="" width="640" height="300">
+    </section>
+
+    <div class="area">
+      <section class="painel" aria-labelledby="t-briefing">
+        <header class="painel-cabeca">
+          <h2 id="t-briefing" tabindex="-1">Briefing</h2>
+          <div class="exemplos" role="group" aria-labelledby="t-exemplos">
+            <span id="t-exemplos">Exemplo:</span>
+            <button type="button" data-exemplo="feriado">Feriado</button>
+            <button type="button" data-exemplo="sumido">Aluno sumido</button>
+            <button type="button" data-exemplo="spinning">Nova aula</button>
+            <button type="button" data-exemplo="reuniao">Reunião</button>
+          </div>
+        </header>
+
+        <form id="form" novalidate>
+          <div class="campos">
+            <div class="campo">
+              <label for="objetivo">Objetivo</label>
+              <select id="objetivo" name="objetivo">
+                <option value="comunicado">Comunicado / aviso geral</option>
+                <option value="evento">Convite para aula ou evento</option>
+                <option value="reativacao">Reativar aluno que sumiu</option>
+                <option value="promocao">Divulgar plano ou promoção</option>
+                <option value="boas_vindas">Boas-vindas a novo aluno</option>
+                <option value="resumo_reuniao">Resumo de reunião da equipe</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="publico">Público</label>
+              <select id="publico" name="publico">
+                <option value="alunos">Alunos ativos</option>
+                <option value="inativos">Alunos inativos</option>
+                <option value="novos">Recém-matriculados</option>
+                <option value="interessados">Interessados (ainda não alunos)</option>
+                <option value="equipe">Equipe interna</option>
+              </select>
+            </div>
+          </div>
+
+          <fieldset>
+            <legend>Canal</legend>
+            <div class="canais">
+              <label><input type="radio" name="canal" value="whatsapp" checked><span><svg aria-hidden="true" focusable="false"><use href="assets/icones/icones.svg#whatsapp"/></svg>WhatsApp</span></label>
+              <label><input type="radio" name="canal" value="instagram"><span><svg aria-hidden="true" focusable="false"><use href="assets/icones/icones.svg#instagram"/></svg>Instagram</span></label>
+              <label><input type="radio" name="canal" value="email"><span><svg aria-hidden="true" focusable="false"><use href="assets/icones/icones.svg#email"/></svg>E-mail</span></label>
+            </div>
+          </fieldset>
+
+          <div class="campos campos-tom">
+            <fieldset>
+              <legend>Tom de voz</legend>
+              <div class="pilulas">
+                <label><input type="radio" name="tom" value="motivador" checked><span>Motivador</span></label>
+                <label><input type="radio" name="tom" value="acolhedor"><span>Acolhedor</span></label>
+                <label><input type="radio" name="tom" value="descontraido"><span>Descontraído</span></label>
+                <label><input type="radio" name="tom" value="informativo"><span>Informativo</span></label>
+                <label><input type="radio" name="tom" value="formal"><span>Formal</span></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Tamanho</legend>
+              <div class="pilulas">
+                <label><input type="radio" name="tamanho" value="curto" checked><span>Curto</span></label>
+                <label><input type="radio" name="tamanho" value="medio"><span>Médio</span></label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="campo">
+            <label for="informacoes">Informações principais</label>
+            <textarea id="informacoes" name="informacoes" rows="6" maxlength="1500" required aria-describedby="dica-informacoes"
+              placeholder="Ex.: No feriado de 15/11 a academia abre das 8h às 14h. Aulas coletivas canceladas. Volta ao normal dia 16."></textarea>
+            <p id="dica-informacoes" class="dica"><span><span id="contador">0</span>/1500 caracteres</span> Dados pessoais são mascarados antes de ir para a IA.</p>
+          </div>
+
+          <button id="botao-gerar" class="botao botao-principal" type="submit">
+            <svg aria-hidden="true" focusable="false"><use href="assets/icones/icones.svg#giz"/></svg><span>Gerar comunicação</span>
+          </button>
+        </form>
+      </section>
+
+      <section class="painel" aria-labelledby="t-agente">
+        <header class="painel-cabeca">
+          <h2 id="t-agente">O agente</h2>
+        </header>
+
+        <svg id="barra" class="barra-progresso" viewBox="0 0 360 96" aria-hidden="true" focusable="false">
+          <rect x="70" y="44" width="220" height="8" rx="2" class="ferro"/>
+          <rect x="6" y="40" width="72" height="16" rx="3" class="ferro"/>
+          <rect x="282" y="40" width="72" height="16" rx="3" class="ferro"/>
+          <rect x="74" y="30" width="8" height="36" rx="2" class="ferro"/>
+          <rect x="278" y="30" width="8" height="36" rx="2" class="ferro"/>
+          <g class="par" data-etapa="lgpd"><rect class="esq" x="56" y="6" width="17" height="84" rx="4"/><rect class="dir" x="287" y="6" width="17" height="84" rx="4"/></g>
+          <g class="par" data-etapa="entender"><rect class="esq" x="40" y="6" width="15" height="84" rx="4"/><rect class="dir" x="305" y="6" width="15" height="84" rx="4"/></g>
+          <g class="par" data-etapa="escrever"><rect class="esq" x="27" y="6" width="12" height="84" rx="3"/><rect class="dir" x="321" y="6" width="12" height="84" rx="3"/></g>
+          <g class="par" data-etapa="revisar"><rect class="esq" x="16" y="6" width="10" height="84" rx="3"/><rect class="dir" x="334" y="6" width="10" height="84" rx="3"/></g>
+        </svg>
+
+        <ol id="etapas" class="etapas" aria-label="Progresso do agente">
+          <li data-etapa="lgpd">
+            <span class="etapa-icone"><svg aria-hidden="true" focusable="false"><use href="assets/icones/icones.svg#escudo"/></svg></span>
+            <div><h3>Proteção de dados</h3><p class="etapa-descricao">Mascara CPF, telefone, e-mail e cartão, sem IA.</p><div class="detalhe"></div></div>
+          </li>
+          <li data-etapa="entender">
+            <span class="etapa-icone"><svg aria-hidden="true" focusable="false"><use href="assets/icones/icones.svg#lupa"/></svg></span>
+            <div><h3>Entendendo o pedido</h3><p class="etapa-descricao">Organiza os fatos e orienta o redator.</p><div class="detalhe"></div></div>
+          </li>
+          <li data-etapa="escrever">
+            <span class="etapa-icone"><svg aria-hidden="true" focusable="false"><use href="assets/icones/icones.svg#caneta"/></svg></span>
+            <div><h3>Escrevendo</h3><p class="etapa-descricao">Escreve no tom da marca e do canal.</p><div class="detalhe"></div></div>
+          </li>
+          <li data-etapa="revisar">
+            <span class="etapa-icone"><svg aria-hidden="true" focusable="false"><use href="assets/icones/icones.svg#selo"/></svg></span>
+            <div><h3>Revisão de qualidade</h3><p class="etapa-descricao">Confere cada fato e corrige.</p><div class="detalhe"></div></div>
+          </li>
+        </ol>
+
+        <p id="status" class="sr-only" role="status" aria-live="polite"></p>
+        <div id="erro" class="erro" role="alert" hidden></div>
+
+        <div id="vazio" class="vazio">
+          <svg aria-hidden="true" focusable="false"><use href="assets/icones/icones.svg#halter"/></svg>
+          <p>Escolha um exemplo ou preencha o briefing.</p>
+        </div>
+
+        <article id="resultado" class="resultado" aria-labelledby="t-resultado" hidden>
+          <header class="resultado-cabeca">
+            <h3 id="t-resultado">Revise e aprove</h3>
+            <p id="nota" class="nota"></p>
+          </header>
+
+          <div id="previa" class="previa">
+            <p class="previa-canal">
+              <svg aria-hidden="true" focusable="false"><use id="previa-icone" href="assets/icones/icones.svg#whatsapp"/></svg>
+              <span id="previa-nome">WhatsApp</span>
+              <small>Editável</small>
+            </p>
+            <div id="campo-assunto" class="campo campo-extra" hidden>
+              <label for="assunto">Assunto</label>
+              <input id="assunto" type="text">
+            </div>
+            <label for="texto" class="sr-only">Texto gerado</label>
+            <textarea id="texto" rows="10"></textarea>
+          </div>
+
+          <p id="nota-humano" class="nota-humano"></p>
+
+          <details class="checklist">
+            <summary>Perguntas de verificação</summary>
+            <ul id="perguntas"></ul>
+          </details>
+          <details class="checklist">
+            <summary>Checklist da revisão automática</summary>
+            <ul id="checklist"></ul>
+          </details>
+
+          <form id="form-ajuste" class="ajuste">
+            <label for="pedido-ajuste">Pedir ajuste</label>
+            <div id="sugestoes-ajuste" class="sugestoes" role="group" aria-label="Ajustes rápidos"></div>
+            <div class="ajuste-linha">
+              <input id="pedido-ajuste" name="pedido" type="text" maxlength="300" autocomplete="off" placeholder="Ex.: destaque o horário de sábado logo no começo">
+              <button id="botao-ajustar" class="botao" type="submit"><svg aria-hidden="true" focusable="false"><use href="assets/icones/icones.svg#caneta"/></svg><span>Ajustar</span></button>
+            </div>
+          </form>
+
+          <div class="acoes" role="group" aria-label="Ações do texto">
+            <button id="botao-aprovar" class="botao botao-principal" type="button"><svg aria-hidden="true" focusable="false"><use href="assets/icones/icones.svg#check"/></svg><span>Aprovar</span></button>
+            <button id="botao-copiar" class="botao" type="button"><svg aria-hidden="true" focusable="false"><use href="assets/icones/icones.svg#copiar"/></svg><span>Copiar</span></button>
+            <button id="botao-refazer" class="botao" type="button"><svg aria-hidden="true" focusable="false"><use href="assets/icones/icones.svg#refazer"/></svg><span>Outra versão</span></button>
+          </div>
+          <p class="rodape-ia">Gerado por IA. Revise antes de publicar.</p>
+        </article>
+      </section>
+    </div>
+
+    <section class="historico" aria-labelledby="t-historico">
+      <header class="painel-cabeca">
+        <h2 id="t-historico">Aprovados</h2>
+      </header>
+      <ul id="historico"></ul>
+    </section>
+  </main>
+
+  <dialog id="dialogo-aprovado" class="dialogo" aria-labelledby="dialogo-canal" aria-describedby="dialogo-texto">
+    <header class="dialogo-cabeca">
+      <h2 id="dialogo-canal"></h2>
+      <p id="dialogo-data"></p>
+    </header>
+    <div id="dialogo-texto" class="dialogo-texto"></div>
+    <div class="acoes">
+      <button id="dialogo-copiar" class="botao botao-principal" type="button"><svg aria-hidden="true" focusable="false"><use href="assets/icones/icones.svg#copiar"/></svg><span>Copiar</span></button>
+      <button id="dialogo-fechar" class="botao" type="button" autofocus><span>Fechar</span></button>
+    </div>
+  </dialog>
+
+  <script src="https://seeb-widget.pages.dev/widget.js" defer></script>
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>
