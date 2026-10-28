@@ -1,0 +1,14 @@
+{
+  "name": "giz-assistente-de-comunicacao",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Assistente corporativo de IA que escreve comunicações de uma rede de academias, com fluxo de agente em etapas.",
+  "type": "module",
+  "packageManager": "pnpm@12.15.0",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "dev": "node --env-file=.env scripts/servidor-local.js"
+  }
+}
