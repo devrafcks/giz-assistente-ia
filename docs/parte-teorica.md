@@ -23,7 +23,7 @@ A solução é um assistente com **entrada estruturada**, não um chat aberto. O
 - **Tarefa adequada ao modelo:** os textos são curtos, com regras claras e exemplos. Um modelo maior não trouxe ganho perceptível nos testes e custaria mais tempo e cota.
 - **Custo:** tem plano gratuito no Google AI Studio, suficiente para protótipo e demonstração.
 - **Saída estruturada:** aceita `responseMimeType: application/json`, o que permite encadear etapas com segurança.
-- **Resiliência:** o modelo é configurável por variável de ambiente, e o sistema troca sozinho para o modelo reserva quando o principal responde 404 ou 503. Isso aconteceu de fato durante o desenvolvimento: uma versão anterior foi descontinuada.
+- **Resiliência:** o sistema troca sozinho para o modelo reserva quando o principal responde 404 ou 503. Isso aconteceu de fato durante o desenvolvimento: uma versão anterior foi descontinuada.
 
 ## 3. Estratégia de prompt e instruções
 
@@ -88,6 +88,6 @@ Regras transversais:
 | **Injeção de prompt** | Texto do usuário tenta mudar as regras ("ignore as instruções...") | Briefing e pedido delimitados e tratados como dado; selects validados contra lista fixa; limites de tamanho. |
 | **Segurança da chave** | Chave de API exposta no navegador | A chave existe só como variável de ambiente na Vercel; o navegador conversa apenas com `/api/gerar` e `/api/ajustar`. |
 | **Abuso e custo** | Uso automatizado esgotando a cota | Limite de pedidos por IP por minuto, tamanho máximo das entradas e modelo leve. |
-| **Dependência do fornecedor** | Modelo descontinuado ou fora do ar | Modelo configurável por variável de ambiente e modelo reserva automático. |
+| **Dependência do fornecedor** | Modelo descontinuado ou fora do ar | Modelo reserva automático, usado quando o principal é descontinuado ou fica fora do ar. |
 
 **Conclusão:** a IA generativa entrega mais quando está dentro de um processo: entrada estruturada, etapas com papéis e técnicas de prompt escolhidas para cada tarefa, proteção de dados antes do modelo e uma pessoa com a palavra final. O assistente não substitui o colaborador. Ele tira o trabalho repetitivo de escrever e deixa com a pessoa o que exige julgamento.

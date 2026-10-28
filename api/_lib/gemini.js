@@ -1,7 +1,7 @@
 import { ErroAgente } from './erros.js';
 
 const URL_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
-const MODELOS = [...new Set([process.env.GEMINI_MODEL || 'gemini-3.5-flash-lite', 'gemini-flash-lite-latest'])];
+const MODELOS = ['gemini-3.5-flash-lite', 'gemini-flash-lite-latest'];
 const STATUS_TENTAR_RESERVA = new Set([404, 500, 503]);
 const TEMPO_LIMITE_MS = 30_000;
 

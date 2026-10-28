@@ -143,7 +143,7 @@ No `.env`, preencha `GEMINI_API_KEY` com uma chave gerada em [aistudio.google.co
 ## Deploy na Vercel
 
 1. Importe este repositório em **Vercel → Add New → Project** (Framework Preset: *Other*).
-2. Em **Settings → Environment Variables**, crie `GEMINI_API_KEY` e, se quiser, `GEMINI_MODEL`.
+2. Em **Settings → Environment Variables**, crie `GEMINI_API_KEY`.
 3. Faça o deploy. O [`vercel.json`](vercel.json) já serve a pasta `public/` e dá 60 s para cada função.
 
 ## Estrutura de pastas
